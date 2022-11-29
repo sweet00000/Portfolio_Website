@@ -3,6 +3,12 @@
     display: flex;
     align-items: center;
 }
+body {
+    margin: 0px;
+}
+#container {
+    margin-top: 0px;
+}
 .menu-item {
     font-size: 14px;
     color:white;
