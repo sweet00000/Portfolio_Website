@@ -1,0 +1,32 @@
+#menu {
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+.menu-item {
+    font-size: 14px;
+    color:white;
+    margin: 0px 10px;
+    text-decoration: none
+}
+.menu-item:hover {
+    text-decoration: underline
+}
+#face {
+    width: 200px;
+    border-radius: 75px;
+}
+#labpic {
+    width: 400px;
+}
+#ng {
+    width: 350px;
+}
+
+#bike {
+    width: 300px;
+}
+
+#xor {
+    width: 300px;
+}
