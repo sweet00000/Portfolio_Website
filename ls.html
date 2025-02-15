@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USGS Landsat Imagery</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        /* Set the map container size */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>USGS Landsat Imagery</h1>
+    <div id="map"></div>
+
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([37.8, -96], 4); // Center on the US
+
+        // Add the USGS Imagery Only MapServer as a tile layer
+        const usgsImagery = L.tileLayer('https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 20,
+            attribution: 'USGS'
+        }).addTo(map);
+
+        // Add a scale bar
+        L.control.scale().addTo(map);
+
+        // Add a layer control (optional)
+        const baseLayers = {
+            "USGS Imagery": usgsImagery
+        };
+        L.control.layers(baseLayers).addTo(map);
+    </script>
+</body>
+</html>
